@@ -1,0 +1,81 @@
+.hero {
+    padding-top: 0;
+}
+
+.hero__container {
+    display: flex;
+    gap: 10px;
+}
+
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    padding: 50px;
+    background: var(--white);
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+}
+
+.hero__title {
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 130%;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+}
+
+.hero__desc {
+    text-transform: uppercase;
+}
+
+.hero__link {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.hero__slider {
+    position: relative;
+    flex-basis: 50%;
+}
+
+.hero__image {
+
+}
+
+.hero__image img {
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+}
+
+.hero__slider-btns {
+    position: absolute;
+    display: flex;
+    gap: 8px;
+    bottom: 50px;
+    right: 50px;
+}
+
+.hero__slider-btn {
+    width: 42px;
+    height: 42px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: none;
+}
+
+.hero__slider-btn_prev {
+    background: var(--yellow) url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 13L1 7L7 1' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M13 7H1' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat center;
+}
+
+.hero__slider-btn_next {
+    background: var(--yellow) url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 13L1 7L7 1' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M13 7H1' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat center;
+    transform: rotate(180deg);
+}
+
+.hero__slider-btn:hover {
+    cursor: pointer;
+}
