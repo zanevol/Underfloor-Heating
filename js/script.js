@@ -1,3 +1,4 @@
+//Swiper
 new Swiper('.hero__slider', {
     slidesPerView: 2,
     spaceBetween: 10,
@@ -10,3 +11,8 @@ new Swiper('.hero__slider', {
         delay: 3000
     }
 })
+
+// Footer year
+const footerCopyrightYear = document.querySelector('.footer__copyright span');
+const currentYear = new Intl.DateTimeFormat('RU-ru', {year: 'numeric'}).format(new Date());
+footerCopyrightYear.textContent = currentYear;
