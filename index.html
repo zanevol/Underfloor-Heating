@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="style/advantages.css">
     <link rel="stylesheet" href="style/calc.css">
     <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="helpers/swiper-bundle.min.css"/>
+
 </head>
 <body>
 <header class="header">
@@ -30,11 +32,64 @@
                 <p class="hero__desc">Устанавливаем теплые полы в квартирах, офисах и загородных домах.</p>
                 <a href="#calc" class="button link hero__link">Рассчитать стоимость</a>
             </div>
-            <div class="hero__slider">
-                <div class="filling">
-                    <div class="filling">
-                        <div class="filling hero__image">
-                            <img loading="lazy" decoding="async" src="img/slide1.jpg" alt="slider-img">
+            <div class="hero__slider-block">
+                <div class="hero__slider swiper">
+                    <div class="hero__slider-wrapper swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <img
+                                    class="hero__image"
+                                    width="590"
+                                    height="530"
+                                    loading="lazy"
+                                    decoding="async"
+                                    src="img/slide1.jpg"
+                                    alt="slider-img"
+                            >
+                        </div>
+                        <div class="swiper-slide">
+                            <img
+                                    class="hero__image"
+                                    width="590"
+                                    height="530"
+                                    loading="lazy"
+                                    decoding="async"
+                                    src="img/slide2.jpg"
+                                    alt="slider-img"
+                            >
+                        </div>
+                        <div class="swiper-slide">
+                            <img
+                                    class="hero__image"
+                                    width="590"
+                                    height="530"
+                                    loading="lazy"
+                                    decoding="async"
+                                    src="img/slide3.jpg"
+                                    alt="slider-img"
+                            >
+                        </div>
+                        <div class="swiper-slide">
+                            <img
+                                    class="hero__image"
+                                    width="590"
+                                    height="530"
+                                    loading="lazy"
+                                    decoding="async"
+                                    src="img/slide4.jpg"
+                                    alt="slider-img"
+                            >
+                        </div>
+                        <div class="swiper-slide">
+                            <img
+                                    class="hero__image"
+                                    width="590"
+                                    height="530"
+                                    loading="lazy"
+                                    decoding="async"
+                                    src="img/slide5.jpg"
+                                    alt="slider-img"
+                            >
                         </div>
                     </div>
                     <div class="hero__slider-btns">
@@ -157,5 +212,7 @@
     </div>
 </footer>
 
+<script src="helpers/swiper-bundle.min.js" defer></script>
+<script src="js/script.js" defer></script>
 </body>
 </html>
