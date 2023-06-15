@@ -9,6 +9,22 @@ new Swiper('.hero__slider', {
     },
     autoplay: {
         delay: 3000
+    },
+    breakpoints: {
+
+        320: {
+            slidesPerView: 1
+        },
+
+        560: {
+            slidesPerView: 2,
+            spaceBetween: 8
+        },
+
+        1024: {
+            slidesPerView: 2,
+            spaceBetween: 10
+        }
     }
 })
 

@@ -1,8 +1,4 @@
 .hero {
-    --width-slide: 590px;
-    --height-slide: 530px;
-    --width-block: calc(50% - 10px);
-    --gap: 10px;
     padding-top: 0;
     overflow: hidden;
 }
@@ -11,7 +7,7 @@
     position: relative;
     display: flex;
     gap: var(--gap);
-    height: var(--height-slide);
+    min-height: 530px;
 }
 
 .hero__content {
@@ -23,14 +19,6 @@
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
     border-radius: 12px;
-}
-
-.hero__title {
-    font-weight: 500;
-    font-size: 44px;
-    line-height: 130%;
-    text-transform: uppercase;
-    margin-bottom: 32px;
 }
 
 .hero__desc {
@@ -46,10 +34,11 @@
     position: absolute;
     left: calc(var(--width-block) + var(--gap) / 2);
     width: calc(((var(--width-block) + var(--gap)) * 2) - var(--gap));
+    height: 100%;
 }
 
 .hero__slider {
-
+    height: 100%;
 }
 
 .hero__slider-wrapper {
@@ -60,7 +49,7 @@
 
 .hero__image {
     width: var(--width-slide);
-    height: var(--height-slide);
+    height: 100%;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
     border-radius: 12px;
@@ -100,4 +89,84 @@
 
 .hero__slider-btn:hover {
     cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .hero__content {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 920px) {
+    .hero__container {
+        flex-direction: column;
+    }
+
+    .hero__content {
+        width: 100%;
+        padding: 24px;
+    }
+
+    .hero__title {
+        max-width: 410px;
+    }
+
+    .hero__desc {
+        max-width: 410px;
+        font-size: 14px;
+        margin-bottom: 50px;
+    }
+
+    .hero__slider-block {
+        position: static;
+        width: auto;
+        height: 50%;
+        bottom: 0;
+        left: 4%;
+    }
+
+    .hero__image {
+        width: 310px;
+    }
+
+    .hero__slider-btns {
+        left: auto;
+        right: 24px;
+        bottom: 24px;
+        transform: none;
+    }
+}
+
+@media (max-width: 560px) {
+    .hero__desc {
+        font-size: 12px;
+        margin-bottom: 24px;
+    }
+
+    .hero__content {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .hero__slider-block {
+        max-width: 100%;
+        height: 280px;
+        bottom: 0;
+        left: 6px;
+    }
+
+    .hero__slider {
+        height: 280px;
+    }
+
+    .hero__image {
+        width: 100%;
+    }
+
+    .hero__slider-btns {
+        left: auto;
+        right: 20px;
+        bottom: 20px;
+    }
 }

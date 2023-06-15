@@ -1,10 +1,10 @@
 .calc__container {
     display: flex;
-    gap: 10px;
+    gap: var(--gap);
 }
 
 .calc__content {
-    flex-basis: 50%;
+    width: var(--width-block);
     padding: 50px;
     background: var(--white);
     -webkit-border-radius: 12px;
@@ -12,18 +12,14 @@
     border-radius: 12px;
 }
 
-.calc__title {
-    font-weight: 500;
-    font-size: 44px;
-    line-height: 130%;
-    text-transform: uppercase;
-    margin-bottom: 32px;
-}
-
 .calc__fieldset {
     display: flex;
     gap: 10px;
     margin-bottom: 32px;
+}
+
+.calc__fieldset.rate__fieldset {
+    margin-bottom: 65px;
 }
 
 .cal__label {
@@ -39,7 +35,12 @@
     margin-bottom: 2px;
 }
 
+.fieldset__legend.calc__text {
+    margin-bottom: 16px;
+}
+
 .calc__input {
+    width: inherit;
     border: 1px solid #E4E4E4;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
@@ -58,7 +59,6 @@
     font-size: 16px;
     line-height: 150%;
 }
-
 
 .fieldset__legend {
     margin-bottom: 16px;
@@ -129,7 +129,7 @@
 
 .calc__total {
     display: flex;
-    flex-basis: 50%;
+    width: var(--width-block);
     background: url("../img/total.jpg") no-repeat center/cover;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
@@ -163,3 +163,89 @@
 .calc__result-count {
     justify-self: flex-end;
 }
+
+@media (max-width: 1240px) {
+    .calc__content,
+    .calc__total {
+        padding: 30px;
+    }
+
+    .calc__fieldset {
+        margin-bottom: 24px;
+    }
+
+    .calc__fieldset.rate__fieldset {
+        margin-bottom: 34px;
+    }
+
+}
+
+@media (max-width: 920px) {
+    .calc__content,
+    .calc__total {
+        padding: 24px;
+    }
+
+    .calc__container {
+        flex-direction: column;
+    }
+
+    .calc__content {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .calc__input {
+        padding: 6px 16px;
+    }
+
+    .calc__radiotext {
+        font-size: 14px;
+    }
+
+    .fieldset__legend.calc__text {
+        margin-bottom: 8px;
+    }
+
+    .calc__total {
+        width: 100%;
+        min-height: 220px;
+        background-position: 50% 75%;
+    }
+
+    .calc__result {
+        margin-top: unset;
+        margin-bottom: auto;
+    }
+
+    .calc__btn {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 560px) {
+    .calc__content,
+    .calc__total {
+        padding: 20px;
+        min-height: auto;
+    }
+
+    .size__fieldset,
+    .rate__fieldset {
+        flex-direction: column;
+    }
+
+    .calc__result {
+        margin: auto;
+        padding: 16px;
+        gap: 8px;
+    }
+
+    .calc__text,
+    .calc__result-count {
+        white-space: nowrap;
+    }
+}
+
+/*8:20*/

@@ -21,6 +21,9 @@
     --white: #F8F8F8;
     --gray: #898989;
     --yellow: #FFC700;
+    --width-slide: 590px;
+    --width-block: calc(50% - 10px);
+    --gap: 10px;
 }
 
 html {
@@ -42,7 +45,7 @@ body {
     font-weight: 400;
 }
 
-h1,h2,h3,h4,p {
+h1, h2, h3, h4, p {
     margin: 0;
 }
 
@@ -67,6 +70,14 @@ ul {
 .container {
     max-width: 1190px;
     margin: 0 auto;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 130%;
+    text-transform: uppercase;
+    margin-bottom: 32px;
 }
 
 .link {
@@ -100,8 +111,44 @@ fieldset {
     border: none;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 1240px) {
     .container {
-        padding: 0 24px;
+        max-width: 890px;
+    }
+
+    .section-offset {
+        padding: 30px 0;
+    }
+
+    .title {
+        font-size: 34px;
+        margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 920px) {
+    .container {
+        max-width: 690px;
+        padding: 0 30px;
+    }
+
+    .title {
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 560px) {
+    .container {
+        padding: 0 6px;
+    }
+
+    .title {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .button {
+        font-size: 12px;
+        padding: 10px 24px;
     }
 }
