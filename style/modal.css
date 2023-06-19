@@ -1,0 +1,153 @@
+.modal {
+    width: 100%;
+    max-width: 790px;
+    border: none;
+    outline: none;
+    padding: 0;
+    background: #fff;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    color: var(--dark);
+}
+
+.modal__wrapper {
+    display: flex;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.modal__close {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21 11L11 21' stroke='%23232020' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M21 21L11 11' stroke='%23232020' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat center;
+    top: 10px;
+    right: 10px;
+}
+
+.modal__close:hover {
+    cursor: pointer;
+}
+
+.modal__content {
+    padding: 30px;
+}
+
+.modal__title {
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 130%;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.modal__desc {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+}
+
+.modal__fieldset {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 32px;
+}
+
+.modal__fieldset.rate__fieldset {
+    margin-bottom: 65px;
+}
+
+.modal__label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.modal__text {
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--gray);
+    margin-bottom: 2px;
+}
+
+.modal__input {
+    width: inherit;
+    border: 1px solid #E4E4E4;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    padding: 15px 25px;
+    outline: none;
+    color: inherit;
+}
+
+.modal__input:focus {
+    border: 1px solid var(--yellow);
+}
+
+.modal__input::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.modal__img {
+    max-width: 350px;
+    margin-left: auto;
+}
+
+.modal::backdrop {
+    background: rgba(0, 0, 0, .9);
+}
+
+@media (max-width: 768px) {
+    .modal__content {
+        padding: 24px;
+    }
+
+    .modal__title {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .modal__desc {
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+
+    .modal__form {
+        height: calc(100% - 145px);
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .calc__btn {
+        align-self: flex-start;
+        margin-top: auto;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .modal__wrapper {
+        flex-direction: column;
+    }
+    .modal__fieldset {
+        flex-wrap: wrap;
+    }
+
+    .modal__form {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modal__img {
+        max-width: 100%;
+        max-height: 214px;
+    }
+}

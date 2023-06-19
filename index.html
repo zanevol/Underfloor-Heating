@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="style/calc.css">
     <link rel="stylesheet" href="style/footer.css">
     <link rel="stylesheet" href="helpers/swiper-bundle.min.css"/>
-
+    <link rel="stylesheet" href="style/modal.css"/>
 </head>
 <body>
 <header class="header">
     <h1 class="visually-hidden">Теплый пол в каждый дом</h1>
     <div class="container header__container">
         <a href="/" class="header__logo"></a>
-        <button class="header__btn button">Заказать</button>
+        <button class="header__btn button js-modal">Заказать</button>
     </div>
 </header>
 
@@ -160,7 +160,12 @@
                             <span class="calc__radiotext">Премиум</span>
                         </label>
                     </fieldset>
-                    <button type="submit" class="button calc__btn">Рассчитать</button>
+                    <div class="form__btns">
+                        <button type="submit" class="button calc__btn" disabled>Рассчитать</button>
+                        <button type="button" class="send__btn js-modal" disabled>Заказать</button>
+                    </div>
+
+
                 </form>
             </div>
             <div class="calc__total">
@@ -217,6 +222,30 @@
         </ul>
     </div>
 </footer>
+
+<dialog class="modal">
+    <button class="modal__close"></button>
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <h2 class="modal__title">Оставьте заявку и мы перезвоним</h2>
+            <p class="modal__desc">наши мастера свяжутся с вами в течение 3 часов</p>
+            <form class="modal__form" method="dialog">
+                <fieldset class="modal__fieldset">
+                    <label class="modal__label">
+                        <span class="modal__text">Имя</span>
+                        <input type="text" class="modal__input name__input" name="name" required>
+                    </label>
+                    <label class="modal__label">
+                        <span class="modal__text">Телефон</span>
+                        <input type="tel" class="modal__input phone__input" name="phone" required>
+                    </label>
+                </fieldset>
+                <button type="submit" class="button calc__btn" disabled>Отправить</button>
+            </form>
+        </div>
+        <img class="modal__img" loading="lazy" decoding="async" width="350" src="img/modal.jpg" alt="modalImage">
+    </div>
+</dialog>
 
 <script src="helpers/swiper-bundle.min.js" defer></script>
 <script src="js/script.js" defer></script>

@@ -96,6 +96,12 @@ ul {
     border: none;
 }
 
+.button:disabled {
+    background: #E0E0E0;
+    color: var(--gray);
+    cursor: not-allowed;
+}
+
 .section-offset {
     padding: 40px 0;
 }

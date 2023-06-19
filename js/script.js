@@ -37,18 +37,42 @@ footerCopyrightYear.textContent = currentYear;
 const calcForm = document.querySelector('.calc__form');
 const calcResultSquare = document.querySelector('.calc__result-square');
 const calcResultLength = document.querySelector('.calc__result-length');
+
 const tariff = {
     economy: 550,
     comfort: 1400,
     premium: 2700
 };
+
+calcForm.addEventListener('input', () => {
+    calcForm.elements[7].disabled = !(calcForm.width.value > 0 && calcForm.length.value > 0);
+})
 calcForm.addEventListener('submit', event => {
     event.preventDefault();
     if (calcForm.width.value > 0 && calcForm.length.value > 0) {
         const square = calcForm.width.value * calcForm.length.value;
-        const price =  square * tariff[calcForm.rate.value];
+        const price = square * tariff[calcForm.rate.value];
         calcResultSquare.textContent = String(square);
         calcResultLength.textContent = String(price);
         calcForm.reset();
+        calcForm.elements[7].disabled = true;
+        calcForm.elements[8].disabled = !(calcResultSquare.textContent !== '0' && calcResultLength.textContent !== '0');
     }
+})
+
+
+
+//Modal
+const modal = document.querySelector('.modal');
+const showModalBtns = document.querySelectorAll('.js-modal');
+const modalCloseBtn = document.querySelector('.modal__close');
+showModalBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.body.style.overflow = 'hidden';
+        modal.showModal();
+    })
+})
+modalCloseBtn.addEventListener('click', () => {
+    modal.close();
+    document.body.style.overflow = '';
 })
