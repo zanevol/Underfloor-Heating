@@ -6,13 +6,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Теплый пол — Приносим тепло в каждый дом</title>
+    <link rel="stylesheet" href="helpers/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/header.css">
     <link rel="stylesheet" href="style/hero.css">
     <link rel="stylesheet" href="style/advantages.css">
     <link rel="stylesheet" href="style/calc.css">
     <link rel="stylesheet" href="style/footer.css">
-    <link rel="stylesheet" href="helpers/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style/modal.css"/>
 </head>
 <body>
@@ -233,14 +233,14 @@
                 <fieldset class="modal__fieldset">
                     <label class="modal__label">
                         <span class="modal__text">Имя</span>
-                        <input type="text" class="modal__input name__input" name="name" required>
+                        <input type="text" class="modal__input name__input" name="name">
                     </label>
                     <label class="modal__label">
                         <span class="modal__text">Телефон</span>
-                        <input type="tel" class="modal__input phone__input" name="phone" required>
+                        <input type="tel" class="modal__input phone__input" name="phone">
                     </label>
                 </fieldset>
-                <button type="submit" class="button calc__btn" disabled>Отправить</button>
+                <button type="submit" class="button calc__btn">Отправить</button>
             </form>
         </div>
         <img class="modal__img" loading="lazy" decoding="async" width="350" src="img/modal.jpg" alt="modalImage">
@@ -248,6 +248,8 @@
 </dialog>
 
 <script src="helpers/swiper-bundle.min.js" defer></script>
+<script src="helpers/just-validate.min.js" defer></script>
+<script src="helpers/inputmask.min.js" defer></script>
 <script src="js/script.js" defer></script>
 </body>
 </html>

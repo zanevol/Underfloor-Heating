@@ -61,7 +61,6 @@ calcForm.addEventListener('submit', event => {
 })
 
 
-
 //Modal
 const modal = document.querySelector('.modal');
 const showModalBtns = document.querySelectorAll('.js-modal');
@@ -76,3 +75,60 @@ modalCloseBtn.addEventListener('click', () => {
     modal.close();
     document.body.style.overflow = '';
 })
+
+// Mask for phone-input modal
+new Inputmask({'mask': '+7(999)999-99-99'}).mask(document.querySelector('.phone__input'));
+
+//Validation modal inputs
+new JustValidate('.modal__form', {
+    errorLabelCssClass: 'error',
+    errorLabelStyle: {
+        color: 'tomato'
+    }
+})
+    .addField('.name__input', [
+        {
+            rule: 'required',
+            errorMessage: 'Обязательное поле'
+        },
+        {
+            rule: 'minLength',
+            value: 3,
+            errorMessage: 'Не менее 3-х символов'
+        },
+    ])
+    .addField('.phone__input', [
+        {
+            rule: 'required',
+            errorMessage: 'Обязательное поле'
+        },
+        {
+            validator: value => {
+                const num = document.querySelector('.phone__input').inputmask.unmaskedvalue();
+                return num.length === 10;
+            },
+            errorMessage: 'Введите корректный номер'
+        }
+    ])
+    .onSuccess((event) => {
+        const form = event.currentTarget;
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify({
+                name: form.name.value,
+                phone: form.phone.value,
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                form.reset();
+                alert(`Спасибо ${data.name}, мы с вами свяжемся, ваша заявка № ${data.id}`);
+            });
+        calcForm.elements[8].disabled = true;
+        calcResultSquare.textContent = calcResultLength.textContent = '0';
+        modal.close();
+        document.body.style.overflow = '';
+    })
